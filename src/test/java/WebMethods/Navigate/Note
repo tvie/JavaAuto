@@ -1,0 +1,13 @@
+navigate().to(url) vs driver.get()
+- get() chỉ chấp nhận url dạng string
+- navigate().to() chấp nhận cả dạng string lẫn object (datatype là URL)
+
+Set<String> và List<String>
+- Set<String> không thể truy cập bằng (set.get(0) → lỗi); ko có thứ tự
+->>>> phù hợp khi chỉ muốn chuyển tab khác tab parents
+- List <String> có thứ tự, có index : List<String> tabs = new ArrayList<>(driver.getWindowHandles());
+->>>  phù hợp khi cần cần switch tab theo thứ tự nào đó
+
+Switch  - Bị conflict giữa logic của Selenium và auto focus tab của browser
+- Khi bấm vào hyperlink -> tự động switch tab về mặt UI khiến code switch tab trông như ko chạy
+- Phải gettitle() và Gethandles.size() để check

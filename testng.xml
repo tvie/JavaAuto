@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="chrome.login.java">
+        <parameter name="browser" value ="chrome" />
+        <classes>
+            <class name="DataProviders.login">
+                <methods><include name="testLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true" name="firefox.login.java">
+        <parameter name="browser" value ="firefox" />
+        <classes>
+            <class name="DataProviders.login">
+                <methods><include name="testLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true" name="safari.login.java">
+        <parameter name="browser" value ="safari" />
+        <classes>
+            <class name="DataProviders.login">
+                <methods><include name="testLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

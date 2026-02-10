@@ -1,0 +1,29 @@
+1. Sleep
+- Nếu ko đủ time thì sẽ bị trả về exception
+- Luôn chờ theo đúng mốc tgian đã đặt dù elements xuất hiện sớm hơn
+- Phải viết nhiều nếu có nhiều elements cần tgian đợi
+2. Implicit wait
+- Chỉ phải viết 1 lần và áp dụng cho toàn bộ element trong script
+- Nếu element xuất hiện sớm hơn max  thì script sẽ run tiếp luôn ko cần chờ đủ max
+- Nếu hết max time mà elements ko xuất hiện thì script trả ra exception
+->>> Set up 1 time dài đủ để page loading hết elements
+3.Explicit wait
+- Phải viết nhiều lần cho nhiều Element nhưng ko cần lệnh findElement(By....) nữa
+- Đợi cho đến khi 1 điều kiền nhất định (visible, clickable,...) dc thực hiện
+- Nếu dk thực hiện xong trc max time -> tiếp tục luôn và nếu ko thực hiện dc khi timeout -> trả ra
+ngoại lệ
+
+Implicit vs Explicit wait
+- Bản chất đầu tiết kiệm khoảng tgian chờ hơn so với thread.sleep
+- Implicit liên tục kiểm tra sự tồn tại của element trong DOM nhg không kiểm tra
+điều kiện cụ thể như visibility hay clickability giống Explicit
+
+Sleep thg dùng khi muốn giữ 1 step nào đó để quan sát lâu hơn
+
+4.Fluent wait
+- FluentWait là một dạng nâng cao của Explicit Wait trong Selenium.
+- Nó cho phép bạn:
+  tự đặt timeout (chờ tối đa bao lâu),
+  tự đặt polling interval (bao lâu kiểm tra lại 1 lần),
+  tự chọn exception để bỏ qua (ignore)
+-->  định nghĩa điều kiện chờ linh hoạt hơn.

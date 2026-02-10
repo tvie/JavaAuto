@@ -1,0 +1,27 @@
+1. Java vs Javascript
+- Dùng framework selenium và testng của Java -> Build logic automation test
+- Khi có 1 số lỗi hoặc 1 số action khó xử lí bằng Java thuần -> xử lí bằng Javascript
+---> Javascript Executor cho phép thực hiện lệnh viết bằng Js trong 1 chương trình Java
+
+2. Vd khi cần dùng Js Executor
+2.1 Gặp phải lỗi ElementClickInterceptedException: element click intercepted: Element <input id="CompareCheckbox-template--19692160057573__product-grid--9177229623525" class="js-compare-checkbox" type="checkbox" name="product-compare" data-product-id="9177229623>
+is not clickable at point (295, 1222). Other element would receive the click: <div class="compare-bar__list-wrap h-scrollable h-scrollable--nice">...</div>
+---> Lỗi này gặp phải khi element button bị overlay bởi 1 element khác -> khi dùng method click() của selenium
+thì click vào lớp overlay trc button -> action click báo lỗi
+---> Lúc này nếu thay bằng method click của Js executor thì sẽ click dc vào button mà bỏ qua lớp overlay
+--->  js.executeScript("arguments[0].click()",removebtn);
+
+3. Khi gặp phải element có cấu trúc DOM gần như giống nhau
+- Có nhiều product card, trong product card đều có button với label giống nhau
+- Các product card chỉ khác url và title
+---> Xác định element dựa vào 2 attribute khác này + class chung của các button
+---> .product-card__list-actions a[href='/products/soft-and-chewy-pretzel-twists']
+
+4. Khi gặp bug Compound class names not permitted
+->> Lỗi xảy ra khi  dùng By.className() với nhiều class cùng lúc.
+->> Nếu trong tên class có khoảng trắng, selenium hiểu đg có 2 class mà method chỉ cho truyền
+vào 1 class
+---> Đổi sang dùng methods khác
+
+
+
