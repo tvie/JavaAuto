@@ -1,0 +1,2 @@
+# JavaAuto
+Selenium + TestNG practice
