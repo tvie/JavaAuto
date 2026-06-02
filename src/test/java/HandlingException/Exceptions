@@ -1,0 +1,29 @@
+Exception
+- is an event can cause program termination
+
+Errors: 2 type
+1. Syntax error: ex - missing comma, , curly braces while writing program
+2. Logic error : the program is executed but output we expect is not correct
+----->
+- If you have a syntax error, you can NOT execute program
+- If you have a logic error, you STILL can execute program but result is not
+
+How exception work
+- In a program, developer/user provide invalid input in one statement -> Next statement
+will return exception -> The program has forced pause
+
+Exception types:
+1. Checked exception: identified by Java compiler
+2. Unchecked exception: NOT identified by Java compiler - MORE WORK
+
+Using exception in practical code
+- When exception happens, return warning or action
+
+Try-catch structure
+try {
+ statement can provide invalid output
+}
+catch (Exception name - ArithmeticException)
+{
+ st you want system return when exception happen
+}
