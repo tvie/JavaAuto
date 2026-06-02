@@ -35,6 +35,7 @@ public class Status_methods {
     }
     @Test(priority=3,dependsOnMethods = {"checkTitle"} )
     public void checkHeadersearch(){
-
+        WebElement searchinput= driver.findElement(By.cssSelector("#SearchInput-sections--21285671108860__header"));
+        searchinput.isSelected();
     }
 }
